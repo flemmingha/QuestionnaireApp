@@ -1,9 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { withExpoRoot } from 'expo-router';
 
-import HomeScreen from './index';
-import DetailsScreen from './details';
+// Adjust the import paths to point to the correct location
+import HomeScreen from './(tabs)/index';
+import DetailsScreen from './(tabs)/details';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -12,7 +12,7 @@ export type RootStackParamList = {
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-function Layout() {
+export default function Layout() {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={HomeScreen} />
@@ -20,6 +20,3 @@ function Layout() {
     </Stack.Navigator>
   );
 }
-
-// withExpoRoot is used to wrap the root component of an Expo Router app
-export default withExpoRoot(Layout);

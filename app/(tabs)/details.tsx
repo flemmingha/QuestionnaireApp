@@ -1,11 +1,14 @@
+// details.tsx
+
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-import { RootStackParamList } from './_layout';
+// Import RootStackParamList as a named import
+import { RootStackParamList } from '../_layout';
 
 type Props = StackScreenProps<RootStackParamList, 'Details'>;
 
-export default function DetailsScreen({ route }: Props) {
+const DetailsScreen: React.FC<Props> = ({ route }) => {
   const { itemId } = route.params;
 
   return (
@@ -14,7 +17,7 @@ export default function DetailsScreen({ route }: Props) {
       <Text>Item ID: {itemId}</Text>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -23,3 +26,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default DetailsScreen;

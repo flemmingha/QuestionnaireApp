@@ -1,11 +1,14 @@
+// index.tsx
+
 import React from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-import { RootStackParamList } from './_layout';
+// Import RootStackParamList as a named import
+import { RootStackParamList } from '../_layout';
 
 type Props = StackScreenProps<RootStackParamList, 'Home'>;
 
-export default function HomeScreen({ navigation }: Props) {
+const HomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text>Home Screen</Text>
@@ -15,7 +18,7 @@ export default function HomeScreen({ navigation }: Props) {
       />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -24,3 +27,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export default HomeScreen;
