@@ -1,12 +1,9 @@
-// index.tsx
-
-import React from 'react';
+import React from 'react'; // Ensure React is imported
 import { View, Text, Button, StyleSheet } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-// Import RootStackParamList as a named import
-import { RootStackParamList } from '../_layout';
+import { RootStackParamList } from '../_layout'; // Import the type from _layout
 
-type Props = StackScreenProps<RootStackParamList, 'Home'>;
+type Props = StackScreenProps<RootStackParamList, 'index'>;
 
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
@@ -14,7 +11,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       <Text>Home Screen</Text>
       <Button
         title="Go to Details"
-        onPress={() => navigation.navigate('Details', { itemId: 42 })}
+        onPress={() => navigation.navigate('details', { itemId: 42 })}
       />
     </View>
   );

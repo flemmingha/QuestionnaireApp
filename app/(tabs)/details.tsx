@@ -1,15 +1,12 @@
-// details.tsx
-
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { StackScreenProps } from '@react-navigation/stack';
-// Import RootStackParamList as a named import
-import { RootStackParamList } from '../_layout';
+import { RootStackParamList } from '../_layout'; // Import the type from _layout
 
-type Props = StackScreenProps<RootStackParamList, 'Details'>;
+type Props = StackScreenProps<RootStackParamList, 'details'>;
 
 const DetailsScreen: React.FC<Props> = ({ route }) => {
-  const { itemId } = route.params;
+  const { itemId } = route.params; // Extract itemId from route params
 
   return (
     <View style={styles.container}>

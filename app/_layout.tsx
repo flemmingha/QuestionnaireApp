@@ -1,22 +1,16 @@
-import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-
-// Adjust the import paths to point to the correct location
-import HomeScreen from './(tabs)/index';
-import DetailsScreen from './(tabs)/details';
+import React from 'react'; // Ensure React is imported
+import { Stack } from 'expo-router';
 
 export type RootStackParamList = {
-  Home: undefined;
-  Details: { itemId: number };
+  index: undefined;         // Home screen does not expect any parameters
+  details: { itemId: number }; // Details screen expects an itemId parameter
 };
-
-const Stack = createStackNavigator<RootStackParamList>();
 
 export default function Layout() {
   return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Details" component={DetailsScreen} />
-    </Stack.Navigator>
+    <Stack>
+      <Stack.Screen name="index" options={{ title: 'Home' }} /> {/* Home Screen */}
+      <Stack.Screen name="details" options={{ title: 'Details' }} /> {/* Details Screen */}
+    </Stack>
   );
 }
