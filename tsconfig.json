@@ -1,23 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "commonjs",
     "strict": true,
     "jsx": "react",
-    "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
       "@/*": [
-        "./*"
+        "./app/*"
       ]
     },
-    "resolveJsonModule": true,
     "esModuleInterop": true
   },
   "include": [
     "app/**/*",
-    "index.tsx",
-    "_layout.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
   ],

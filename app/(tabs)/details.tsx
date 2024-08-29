@@ -1,20 +1,19 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { StackScreenProps } from '@react-navigation/stack';
-import { RootStackParamList } from '../_layout'; // Import the type from _layout
+import { View, Text, Button, StyleSheet } from 'react-native';
+import { useRouter, useLocalSearchParams } from 'expo-router';
 
-type Props = StackScreenProps<RootStackParamList, 'details'>;
-
-const DetailsScreen: React.FC<Props> = ({ route }) => {
-  const { itemId } = route.params; // Extract itemId from route params
+export default function DetailsScreen() {
+  const { itemId } = useLocalSearchParams();
+  const router = useRouter();
 
   return (
     <View style={styles.container}>
       <Text>Details Screen</Text>
       <Text>Item ID: {itemId}</Text>
+      <Button title="Go Back" onPress={() => router.back()} />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -23,5 +22,3 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
-export default DetailsScreen;
